@@ -2,29 +2,29 @@
   "mongodbVersion": "8.0.3",
   "results": {
     "aeria (bypassSecurity)": {
-      "norefs": 1776,
-      "plain": 2198,
-      "deep": 2625
+      "norefs": 1660,
+      "plain": 2202,
+      "deep": 2548
     },
     "aeria (default)": {
-      "norefs": 1978,
-      "plain": 2230,
-      "deep": 2826
+      "norefs": 2036,
+      "plain": 2386,
+      "deep": 2567
     },
     "mongoose (autopopulate)": {
-      "norefs": 1646,
-      "plain": 3831,
-      "deep": 5604
+      "norefs": 1668,
+      "plain": 3759,
+      "deep": 5529
     },
     "mongoose (populate method)": {
-      "norefs": 1890,
-      "plain": 3717,
-      "deep": 5616
+      "norefs": 1875,
+      "plain": 3682,
+      "deep": 5519
     },
     "prisma": {
-      "norefs": 3037,
-      "plain": 5108,
-      "deep": 7174
+      "norefs": 2951,
+      "plain": 5007,
+      "deep": 7029
     }
   }
 }
