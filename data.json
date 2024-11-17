@@ -1,0 +1,30 @@
+{
+  "mongodbVersion": "8.0.3",
+  "results": {
+    "aeria (bypassSecurity)": {
+      "norefs": 1776,
+      "plain": 2198,
+      "deep": 2625
+    },
+    "aeria (default)": {
+      "norefs": 1978,
+      "plain": 2230,
+      "deep": 2826
+    },
+    "mongoose (autopopulate)": {
+      "norefs": 1646,
+      "plain": 3831,
+      "deep": 5604
+    },
+    "mongoose (populate method)": {
+      "norefs": 1890,
+      "plain": 3717,
+      "deep": 5616
+    },
+    "prisma": {
+      "norefs": 3037,
+      "plain": 5108,
+      "deep": 7174
+    }
+  }
+}
