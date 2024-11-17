@@ -1,0 +1,50 @@
+name: Continuos Integration
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  MONGOMS_RUNTIME_DOWNLOAD: 1
+  MONGOMS_VERSION: 8.0.3
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build packages
+        run: pnpm build
+      - name: Download binaries
+        run: pnpm download-binaries
+      - name: Run benchmarks
+        run: pnpm start
+      - uses: actions/checkout@v3
+        with:
+          ref: results
+      - name: Commit changes
+        run: |
+          git checkout results
+          git config user.name "Continuos Integration"
+          git config user.email "runner@ci"
+          git pull --rebase origin results
+          mv /tmp/mongo-benchmark-results/* .
+          git add .
+          git commit -m 'feat: update results'
+          git push -u origin results
+

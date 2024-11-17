@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+if ! test $GITHUB_ACTIONS && ! test $SKIP; then
+  pnpm i
+  pnpm lint:fix
+fi
+
+git add pnpm-lock.yaml
+

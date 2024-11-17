@@ -1,0 +1,33 @@
+{
+  "name": "aeria-benchmark",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@9.1.0",
+  "scripts": {
+    "postinstall": "husky",
+    "lint": "eslint suite/src/** packages/*/src/**",
+    "lint:fix": "eslint --fix suite/src/** packages/*/src/**",
+    "build": "./scripts/build.sh",
+    "download-binaries": "node suite/dist/download.js",
+    "start": "pnpm -r --workspace-concurrency=1 --filter='./packages/*' start -i 5000 && pnpm organize",
+    "organize": "node suite/dist/organize.js"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@eslint-aeria/config": "^0.0.5",
+    "@types/node": "^22.9.0",
+    "eslint": "^9.15.0",
+    "husky": "^9.1.6",
+    "mongodb": "^6.10.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "mongodb-memory-server": "^10.1.2"
+  },
+  "config": {
+    "mongodbMemoryServer": {
+      "version": "8.0.3"
+    }
+  }
+}

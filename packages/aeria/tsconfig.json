@@ -1,0 +1,18 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "paths": {
+      "common": [
+        "../../suite/dist/index.d.ts"
+      ],
+      "mongodb": [
+        "./node_modules/mongodb"
+      ]
+    }
+  },
+  "include": [
+    ".aeria/aeria.d.ts",
+    "src"
+  ]
+}

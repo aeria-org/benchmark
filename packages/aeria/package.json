@@ -1,0 +1,16 @@
+{
+  "name": "aeria",
+  "type": "module",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js -r",
+    "show-pipeline": "node dist/showPipeline.js"
+  },
+  "dependencies": {
+    "aeria": "^0.0.223",
+    "common": "link:../../suite"
+  }
+}
